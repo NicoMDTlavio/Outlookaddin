@@ -27,7 +27,7 @@
           rawBody.length > BODY_MAX ? rawBody.slice(0, BODY_MAX) : rawBody;
         const params = new URLSearchParams({
           tenantId: "d73a39db-6eda-495d-8000-7579f56d68b7",
-          source: "outlook-addin-v2",
+          source: "outlook-addin-v11",
           subj: subject,
           from: fromName,
           email: fromEmail,
