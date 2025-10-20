@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xsi:type="MailApp">
+
+  <!-- Remplace par un GUID unique si besoin -->
+  <Id>f6a2e9d4-6d3a-4fb0-8e8c-3be0a4db8a11</Id>
+  <Version>1.0.0.2</Version>
+  <ProviderName>Nico MDT</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Archive Site Comm (Basic)"/>
+  <Description DefaultValue="Basic task pane add-in without commands."/>
+
+  <!-- Icônes hébergées sur GitHub Pages -->
+  <IconUrl DefaultValue="https://nicomdtlavio.github.io/Outlookaddin/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://nicomdtlavio.github.io/Outlookaddin/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="https://nicomdtlavio.github.io/Outlookaddin/"/>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <!-- Requirements avant FormSettings / Permissions (schéma 1.1) -->
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+
+  <!-- FormSettings (requis dans 1.1) -->
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://nicomdtlavio.github.io/Outlookaddin/panelview.html"/>
+        <RequestedHeight>350</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <!-- Puis Permissions -->
+  <Permissions>ReadItem</Permissions>
+
+  <!-- Activation en lecture de message -->
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+</OfficeApp>
